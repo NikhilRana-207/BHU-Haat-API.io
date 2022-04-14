@@ -10,10 +10,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 const PORT = process.env.PORT || 3000
 
-app.use((req, res, next)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    next();
-})
+var cors = require('cors')
+
+app.use(cors());
+cors({credentials: true, origin: true});
 
 app.get('/', (req, res)=>{
     res.redirect('https://github.com/rahulsingh522003/BHU-Haat-API.io');
