@@ -7,23 +7,23 @@ require('express-async-errors')
 require('dotenv').config();
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 const PORT = process.env.PORT || 3000
 
 var cors = require('cors')
 
 app.use(cors());
-cors({credentials: true, origin: true});
+cors({ credentials: true, origin: true });
 
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
     res.redirect('https://github.com/rahulsingh522003/BHU-Haat-API.io');
 })
 
 app.use('/api', router);
 
-const start = async () =>{
+const start = async () => {
     connectDB(process.env.MONGO_URI);
-    app.listen(PORT, ()=>{
+    app.listen(PORT, () => {
         console.log(`Listening on ${PORT}`);
     })
 }

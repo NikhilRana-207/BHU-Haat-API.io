@@ -1,23 +1,23 @@
 const mongoose = require('mongoose');
 
 const sellItemSchema = mongoose.Schema({
-    name:{
+    name: {
         type: String,
         required: true
     },
-    owner:{
+    owner: {
         type: String,
         required: true
     },
-    cost:{
+    cost: {
         type: Number,
         required: true
     },
-    contact:{
+    contact: {
         type: String,
         required: true
     },
-    imageURL:{
+    imageURL: {
         type: String,
         required: true
     }
