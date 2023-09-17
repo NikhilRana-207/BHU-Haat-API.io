@@ -1,26 +1,26 @@
 const mongoose = require('mongoose');
 
 const foundItemSchema = mongoose.Schema({
-    name:{
+    name: {
         type: String,
         required: true
     },
-    foundBy:{
+    foundBy: {
         type: String,
         required: true
     },
-    location:{
+    location: {
         type: String
     },
-    contact:{
+    contact: {
         type: String,
         required: true
     },
-    imageURL:{
+    imageURL: {
         type: String,
         required: true
     },
-    content:{
+    content: {
         type: String
     }
 })

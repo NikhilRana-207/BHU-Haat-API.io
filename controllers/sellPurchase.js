@@ -2,7 +2,7 @@ const sellItems = require('../models/sellPurchase')
 
 const findSellItem = async (req, res) => {
     if (req.query.name) {
-        req.query.name = {$regex: req.query.name, $options:'i'};
+        req.query.name = { $regex: req.query.name, $options: 'i' };
     }
     const Items = await sellItems.find(req.query);
     res.status(200).json(Items);
@@ -11,7 +11,7 @@ const findSellItem = async (req, res) => {
 const postSellItem = async (req, res) => {
     const Item = req.body;
     try {
-        Items = await sellItems.create(Item);   
+        Items = await sellItems.create(Item);
     } catch (err) {
         return res.status(400).send(err.message);
     }
