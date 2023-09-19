@@ -8,8 +8,8 @@ const getMessage = async (req, res) => {
 const postMessage = async (req, res) => {
     const Message = req.body;
     try {
-        Messages = message.create(Message);
-    } catch (error) {
+        Messages = await message.create(Message);
+    } catch (err) {
         console.log(err.message);
         return res.status(400).send(err.message);
     }
